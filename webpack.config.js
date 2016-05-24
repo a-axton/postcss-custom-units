@@ -1,19 +1,27 @@
 var webpack = require('webpack');
-var PROD = (process.env.PROD);
-var plugins = PROD ? [
+var isProduction = process.env.NODE_ENV === 'production';
+var isTest = process.env.NODE_ENV === 'test';
+
+var plugins = isProduction ? [
   new webpack.optimize.UglifyJsPlugin({
     compress: {
-        warnings: false
+      warnings: false
     }
   })
 ] : [];
-
-module.exports = {
-  entry: './src/index.js',
-  output: {
+var entry = isTest ? './test/tests.js' : './src/index.js';
+var output = isTest
+  ? {
+    path: './tmp',
+    filename: 'testBundle.js'
+  } 
+  : {
     path: './dist',
     filename: 'index.js'
-  },
+  };
+module.exports = {
+  entry: entry,
+  output: output,
   module: {
     preLoaders: [
       { test: /\.js$/, exclude: /node_modules/, loader: 'eslint-loader'}
