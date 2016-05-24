@@ -13,7 +13,7 @@ var entry = isTest ? './test/tests.js' : './src/index.js';
 var output = isTest
   ? {
     path: './tmp',
-    filename: 'testBundle.js'
+    filename: 'tests.js'
   } 
   : {
     path: './dist',
