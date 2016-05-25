@@ -116,7 +116,7 @@
     "no-use-before-define": 2,
     // Stylistic Issues
     "brace-style": [
-      1,
+      0,
       "stroustrup",
       {
         "allowSingleLine": true
