@@ -1,15 +1,15 @@
 {
-  "name": "npm-starter",
+  "name": "postcss-custom-units",
   "version": "1.0.0",
   "description": "",
   "main": "dist/index.js",
-  "homepage": "https://github.com/a-axton/module-starter",
+  "homepage": "https://github.com/a-axton/postcss-custom-units",
   "repository": {
     "type": "git",
-    "url": "https://github.com/a-axton/module-starter.git"
+    "url": "https://github.com/a-axton/postcss-custom-units.git"
   },
   "bugs": {
-    "url": "https://github.com/a-axton/module-starter/issues"
+    "url": "https://github.com/a-axton/postcss-custom-units/issues"
   },
   "babel": {
     "presets": [
@@ -20,7 +20,7 @@
     "test-node": "NODE_ENV=test webpack --target node && mocha tmp/tests.js",
     "test-web": "webpack-dev-server 'mocha!./test/tests.js' --output-filename tmp/tests.js",
     "dev": "NODE_ENV=development webpack --progress --colors --watch",
-    "build": "NODE_ENV=production webpack --progress --colors"
+    "build": "NODE_ENV=production webpack --target node --progress --colors"
   },
   "author": "Andy Axton",
   "license": "MIT",
@@ -28,12 +28,16 @@
     "babel-core": "^6.9.0",
     "babel-loader": "^6.2.4",
     "babel-preset-es2015": "^6.9.0",
-    "chai": "^3.4.1",
+    "chai": "^3.5.0",
     "eslint": "^1.10.3",
     "eslint-loader": "^1.2.0",
+    "json-loader": "^0.5.4",
     "mocha": "^2.5.1",
     "mocha-loader": "^0.7.1",
     "webpack": "^1.12.9",
     "webpack-dev-server": "^1.14.1"
+  },
+  "dependencies": {
+    "postcss": "^5.0.21"
   }
 }

@@ -1,4 +1,4 @@
-## Module Starter
+## Development
 
 #### Install
 ```npm install```
